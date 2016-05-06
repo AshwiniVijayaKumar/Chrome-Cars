@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Pages>
+	<appData>
+		<reseller>appypie.com</reseller>
+		<appCategory>Business</appCategory>
+		<appName>Chrome Cars</appName>
+		<snappyappyAppName>Chrome Cars</snappyappyAppName>
+		<servernameappy>snappy</servernameappy>
+		<appPackage>com.appypie.appypie75f1799f07eb</appPackage>
+		<appId>75f1799f07eb</appId>
+		<headerBarFont>trebuchetMS</headerBarFont>
+		<headerBarSize>mediumHeaderBar</headerBarSize>
+		<headerBarBackgroundColor>#3A7AE4</headerBarBackgroundColor>
+		<headerBarTextColor>#ffffff</headerBarTextColor>
+		<navigationBarType>text</navigationBarType>
+		<headerBarTitle>Chrome Cars</headerBarTitle>
+		<nav_header_image_name> </nav_header_image_name>
+		<nav_header_ipad_image_name> </nav_header_ipad_image_name>
+		<navigationFont>trebuchetMS</navigationFont>
+		<navigationSize>smallNav</navigationSize>
+		<navBackgroundColor>rgba(0,0,0,0.24)</navBackgroundColor>
+		<navBorderColor>#fff</navBorderColor>
+		<navTextColor>#ffffff</navTextColor>
+		<navIconColor>#ffffff</navIconColor>
+		<appPageFont>arial</appPageFont>
+		<appPageHsize>mediumHeading</appPageHsize>
+		<pageIndentation>left</pageIndentation>
+		<indentContent>left</indentContent>
+		<appPageShsize>mediumSubHeading</appPageShsize>
+		<appPageCsize>mediumContent</appPageCsize>
+		<appBackground>http://snappy.appypie.com/media/user_space/75f1799f07eb/background/vintage_014.jpg</appBackground>
+		<appIpadBackground>http://snappy.appypie.com/media/user_space/75f1799f07eb/background/vintage_014.jpg</appIpadBackground>
+		<pageTextColor>#ffffff</pageTextColor>
+		<pageIconColor>#ffffff</pageIconColor>
+		<secondaryButtonBgColor>#1d65db</secondaryButtonBgColor>
+		<primaryButtonBgColor>#3a7ae4</primaryButtonBgColor>
+		<buttonTextColor>#ffffff</buttonTextColor>
+		<setOrientations>Off</setOrientations>
+		<appShareMessage> </appShareMessage>
+		<winMobId> </winMobId>
+		<winUnitMobId> </winUnitMobId>
+		<iad>False</iad>
+		<ANDAdStatus> </ANDAdStatus>
+		<appMobIdBannerWindow>NULL</appMobIdBannerWindow>
+		<appMobIdInterstitialWindow>NULL</appMobIdInterstitialWindow>
+		<appMobIdBannerBlackberry>NULL</appMobIdBannerBlackberry>
+		<appMobIdInterstitialBlackberry>NULL</appMobIdInterstitialBlackberry>
+		<appMobIdBannerIphone>NULL</appMobIdBannerIphone>
+		<appMobIdInterstitialIphone>NULL</appMobIdInterstitialIphone>
+		<appMobId>NULL</appMobId>
+		<appMobIdBanner>NULL</appMobIdBanner>
+		<appMobIdInterstitial>NULL</appMobIdInterstitial>
+		<uaId> </uaId>
+		<appIcon>http://snappy.appypie.com/media/user_space/75f1799f07eb/appicon/USR_USR_appicon_1462368625_5585.jpg</appIcon>
+		<appSplash>http://snappy.appypie.com/media/splash/1351667928.jpg</appSplash>
+		<appTheme>black</appTheme>
+		<backgroundType>library_image</backgroundType>
+		<layout>imgmatrix</layout>
+		<hideLayout> </hideLayout>
+		<layoutOption> </layoutOption>
+		<layoutAlign>left,bottom</layoutAlign>
+		<layoutHeader> </layoutHeader>
+		<Logo>http://snappy.appypie.com/media/user_space/75f1799f07eb/appicon/USR_USR_appicon_1462368625_5585.jpg</Logo>
+		<bgImage>http://snappy.appypie.com/media/user_space/75f1799f07eb/background/vintage_014.jpg</bgImage>
+		<version>2</version>
+		<autoUpdate>On</autoUpdate>
+		<appLock>none</appLock>
+		<blockDeviceType>Window,Blackberry</blockDeviceType>
+		<appBandwidthExceeded>false</appBandwidthExceeded>
+		<plan>Free</plan>
+		<owneremail>abhinayashankar@rocketmail.com</owneremail>
+		<ownerName>Abhinaya</ownerName>
+		<resellerId>0</resellerId>
+		<developerPlan>false</developerPlan>
+		<lang>en</lang>
+		<beacon>false</beacon>
+		<fence>false</fence>
+		<landscapeImage>http://snappy.appypie.com/media/splash/1351667928.jpg</landscapeImage>
+		<customBackgroundImage>
+		</customBackgroundImage>
+		<customSplashImage>
+		</customSplashImage>
+		<customHeaderImage>
+		</customHeaderImage>
+		<piwikId>0</piwikId>
+	</appData>
+	<home>
+		<pageid>website</pageid>
+		<pageNewid>Website</pageNewid>
+		<autoLogin>false</autoLogin>
+		<pageIdentifierBecon>website_757864544_21</pageIdentifierBecon>
+		<iconName>business-website.jpg</iconName>
+		<iconPath>http://snappy.appypie.com/media/user_space/75f1799f07eb/pageicon/</iconPath>
+	</home>
+<website indexval="0">
+	<autoLogin>NO</autoLogin>
+	<autoPublish>NO</autoPublish>
+	<websiteFieldrow indexval="0">
+		<websitePage>http://chromecars.my-free.website</websitePage>
+		<websitePageName>Website</websitePageName>
+		<websiteIconName>iconz-globe</websiteIconName>
+		<inAppNavigation>true</inAppNavigation>
+		<websiteAuthCheck>false</websiteAuthCheck>
+		<nativeOsBrowser>false</nativeOsBrowser>
+	</websiteFieldrow>
+</website>
+<updateSettings indexval="0">
+	<appUpdate>App update</appUpdate>
+	<appUpdateIcon>icon-share-1</appUpdateIcon>
+	<autoUpdatePage>Auto update</autoUpdatePage>
+	<appUpdateAvailable>App Update Available</appUpdateAvailable>
+	<updateButton>Update</updateButton>
+	<rateAndShare><![CDATA[Rate & Share]]></rateAndShare>
+	<appUpdateAvailableDesc>Auto Update Description</appUpdateAvailableDesc>
+	<rateAndShareDesc><![CDATA[Rate & Share Description]]></rateAndShareDesc>
+	<rateNow>Rate Now</rateNow>
+	<enableShare>On</enableShare>
+	<shareNow>Share Now</shareNow>
+	<date>Date</date>
+	<applicationUpdated>Application Updated</applicationUpdated>
+	<on>On</on>
+	<off>Off</off>
+	<lastNotification>Last 5 Notifications</lastNotification>
+	<noUpdateAbailable>There is no app update available</noUpdateAbailable>
+	<zopimChatCode> </zopimChatCode>
+</updateSettings>
+<LanguageSettings indexval="">
+	<signup_entername_alert>Name field cannot be left blanks</signup_entername_alert>
+	<Sign_up_password>Password field cannot be left blank</Sign_up_password>
+	<Sign_up_email>Please Enter a valid Email</Sign_up_email>
+	<Sign_up_password_should_be_seven_char>Password length should be minimum 7 characters.</Sign_up_password_should_be_seven_char>
+	<Sign_up_password_do_not_match>Password does not match</Sign_up_password_do_not_match>
+	<Sign_up_password_send_mail_id>Password has been sent on your E-mail Id</Sign_up_password_send_mail_id>
+	<Sign_up_password_unable_to_reset>Unable to reset your Password</Sign_up_password_unable_to_reset>
+	<Registered_successfully>Registered Successfully</Registered_successfully>
+	<Unable_to_register>Unable to Register !</Unable_to_register>
+	<User_already_registered>User Already Registered !</User_already_registered>
+	<Email_and_password_must_not_be_blank>Email id and password must not be blank.</Email_and_password_must_not_be_blank>
+	<Invalid_user_name_or_password>Invalid User name or password</Invalid_user_name_or_password>
+	<No_listing_for_update>No Listing for update</No_listing_for_update>
+</LanguageSettings>
+<loginfield indexval="0">
+	<loginSetting>
+		<enableFacebookNow>Off</enableFacebookNow>
+		<faceBookAppName> </faceBookAppName>
+		<faceBookAppKey> </faceBookAppKey>
+	</loginSetting>
+	<inp>
+		<paymentMethod />
+		<businessId />
+		<inapMonthlySub />
+		<inapYearlySub />
+		<anppAddProductId />
+		<publicKey />
+		<iphoneMonthSubs />
+		<iphoneYearlySubs />
+		<iphoneEditionProductId />
+		<subsPriceMonthly />
+		<subsCurrencyMonthly />
+		<subsPriceYearly />
+		<subsCurrencyYearly />
+		<editionPrice />
+		<editionCurrency />
+		<loginDescr />
+	</inp>
+	<signin>
+		<signintext>Sign in</signintext>
+		<emailid>Email/Phone</emailid>
+		<loginpassword>Password</loginpassword>
+		<loginbtntext>Login</loginbtntext>
+		<forgotpwd>Forgot your password?</forgotpwd>
+		<accounttext>Don’t have an account yet</accounttext>
+		<loginsignuptext>Sign up Now</loginsignuptext>
+	</signin>
+	<signup>
+		<loginPageId>systemlogin_757864754_60</loginPageId>
+		<signuptext>Sign up Now</signuptext>
+		<name>Name</name>
+		<email>Email/Phone</email>
+		<pass>Password</pass>
+		<confirmpwd>Confirm  Password</confirmpwd>
+		<phoneNo>Phone</phoneNo>
+		<companyName>Company</companyName>
+		<signupbtntext>Sign Up</signupbtntext>
+		<alreadyaccounttext>Already have an account?</alreadyaccounttext>
+		<emailVerification>0</emailVerification>
+	</signup>
+	<forgetpwdpage>
+		<forgotpwdtext>Forgot Password </forgotpwdtext>
+		<emailaddress>Email/Phone</emailaddress>
+		<resetpwdbtn>Reset Password</resetpwdbtn>
+		<forgotaccounttext>Don’t have an account yet</forgotaccounttext>
+		<forgotalreadyaccounttext>Already have an account?</forgotalreadyaccounttext>
+		<forgotsignin>Sign in</forgotsignin>
+		<forgotsignuptext>Sign up Now</forgotsignuptext>
+	</forgetpwdpage>
+</loginfield>
+</Pages>

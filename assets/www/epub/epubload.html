@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Basic ePubJS Example</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+                
+        <!-- EPUBJS Renderer -->
+      
+        <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+        <script src="js/epub.min.js"></script>
+       
+        <script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
+        <link href="css/double-page.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/basic.css">
+
+        <style type="text/css">
+
+          body {
+            overflow: auto;
+            background: #eee;
+          }
+
+          #wrapper {
+            width: -webkit-calc(100% - 2px);
+            height: -webkit-calc(100% - 102px);
+            overflow: hidden;
+            border: 1px solid #ccc;
+            margin: 0px auto;
+            background: #fff;
+            border-radius: 0 5px 5px 0;
+          }
+
+      
+
+
+
+
+
+
+
+/*------------------------------*/
+
+.header h1 {
+    display: block;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    min-height: 1em;
+    outline: 0 none !important;
+    overflow: hidden;
+    padding: 14px 0 14px 41px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.header {
+    background: linear-gradient(to bottom, #565656 0%, #373737 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    font-weight: normal;
+    position: relative;
+   z-index: 2;
+   position:fixed;
+   width:100%;
+}
+body { margin:0px;}
+#wrapper { margin-top:100px !important;}
+.slide-appypie-back {
+    box-shadow: 1px -4px 0 3px rgba(0, 0, 0, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2) inset;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.slide-appypie-back {
+    background: linear-gradient(to bottom, rgba(102, 102, 102, 0.5) 0%, rgba(68, 68, 68, 0.5) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    box-shadow: -1px -4px 0 3px rgba(0, 0, 0, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2) inset;
+    left: 0;
+    line-height: 12px;
+    margin: 0;
+    overflow: hidden;
+    padding: 8px 10px;
+    position: absolute;
+    top: 0;
+}
+.font-resizeBox { padding:10px; background:#EBEBEB; min-height:22px;"}
+.font-size { float:left; width:60%; color:#232323; text-shadow:none;}
+.font-size a { background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #999999;
+    color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 5px;
+    padding: 0 5px;
+    text-decoration: none;}
+	.font-resizeBox  button { float:right;}
+
+
+
+.dropdown 
+{
+color: #555555;
+    float: right;
+    height: 17px;
+    margin: 3px -22px 0 0;
+    position: relative;
+    text-align: left;
+    width: 123px;
+}
+.submenu
+{
+background: #fff;
+position: absolute;
+top: -12px;
+left: -20px;
+z-index: 100;
+width: 135px;
+display: none;
+margin-left: 10px;
+padding: 40px 0 5px;
+border-radius: 0px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.dropdown li a 
+{
+color: #555555;
+display: block;
+font-family: arial;
+font-weight: bold;
+padding: 6px 15px;
+cursor: pointer;
+text-decoration:none;
+}
+
+.dropdown li a:hover
+{
+background:#155FB0;
+color: #FFFFFF;
+text-decoration: none;
+}
+.account 
+{
+font-size: 15px;
+line-height: 16px;
+color: #555;
+position: absolute;
+z-index: 110;
+display: block;
+padding: 11px 0 0 20px;
+right:20px;
+top:-18px;
+text-decoration: none;
+cursor:pointer;
+}
+.root
+{
+list-style:none;
+margin:0px;
+padding:0px;
+font-size: 11px;
+padding: 11px 0 0 0px;
+border-top:1px solid #dedede;
+}
+
+
+         
+        </style>
+        
+         <script>
+        
+         var bookpath=querySt("bookpath");
+         var appname=querySt("appname").replace(/%20/g,' ');
+         //result = result.replace(/ /g, '@!!@#');
+         function querySt(ji)
+ 		{
+        	 var data;
+ 			hu = window.location.search.substring(1);
+ 			gy = hu.split("&");
+ 			for (i=0;i<gy.length;i++)
+ 			{
+ 			ft = gy[i].split("=");
+ 				if (ft[0] == ji) {
+ 					return ft[1];
+ 				}
+ 			}
+ 		}
+         
+         function goback()
+         {
+        	 toaster1.close();
+         }
+         function tableofContent()
+         {
+        	 Book.getToc().then(function(toc){
+         	    console.log("abcccccc--"+JSON.stringify(toc));
+         	   toaster1.tableofContent(JSON.stringify(toc));
+         	});
+         }
+         function loadChapter(str)
+         {
+        	 Book.goto(str);
+         }
+         
+         function decreaseFont()
+         {
+        	 var fontsize= localStorage.getItem("fontsize");
+        	 fontsize=parseFloat(fontsize)-.2;
+        	 if(fontsize>.7)
+        		 {
+        		 Book.setStyle("font-size", fontsize+"em");
+        		 localStorage.setItem("fontsize",fontsize);
+        		 }
+        	 
+         }
+         function increaseFont()
+         {
+        	 var fontsize= localStorage.getItem("fontsize");
+        	 fontsize=parseFloat(fontsize)+.1;
+        	 if(fontsize<1.7)
+        		 {
+        		 Book.setStyle("font-size", fontsize+"em"); 
+        		 localStorage.setItem("fontsize",fontsize);
+        		 }
+         }
+         
+         var Book = ePub(bookpath, {
+            
+             spreads : false,
+             fixedLayout : true
+           });
+           /*  var Book = ePub("moby-dick/", {
+              width: 320,
+              height: 500,
+              spreads : false,
+              fixedLayout : true
+            });
+          */
+           // alert(Book.pagination.totalPages);
+            
+            /*  $(function() {
+                //Enable swiping...
+                $("#area").swipe( {
+                                 swipe:function(event, direction, distance, duration, fingerCount) {
+                                	 alert(direction);
+                                  //alert(direction);
+                                	 if(direction=="left")
+                                		 Book.nextPage();
+                                	 else
+                                		 Book.prevPage();
+                                 },
+                                 threshold:0
+                                 });
+                }); */ 
+            
+
+        </script>
+    </head>
+    <body >
+        <div id="main">
+          <div id="prev" onclick="prePage();" class="arrow" style="display: none;">‹</div>
+          <header style="" class="header">
+<h1 id="appname">app name</h1>
+<a href="#" class="slide-appypie-back" style="display:block;"><img border="0" width="16" height="30" src="../images/back-btn.png" onclick="goback();"></a>
+<div class="font-resizeBox">
+<div class="font-size"><a href="#" onclick="decreaseFont();">-</a>Font<a href="#" onclick="increaseFont()">+</a></div>
+<!--Pop UP Button---->
+<div class="dropdown">
+<img src="../images/tocicon.png" class="account" onclick="tableofContent();">
+
+<!-- <div class="submenu">
+<ul class="root">
+<li ><a href="#Dashboard" >Dashboard</a></li>
+<li ><a href="#Profile" >Profile</a></li>
+<li ><a href="#settings">Settings</a></li>
+<li ><a href="#feedback">Send Feedback</a></li>
+</ul>
+</div>
+ -->
+</div>
+<!--Pop UP Button---->
+</div>
+</header>
+  <div class="flipbook-viewport">
+	<div class="container">
+		<div class="flipbook">
+			<div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div><div class="page" ></div>
+		</div>
+	</div>
+</div> 
+          <div id="wrapper">
+            <div id="area"></div>
+          </div>
+          <div id="next" onclick="nextPage();"class="arrow" style="display: none;">›</div>
+        </div>
+        
+
+        <script>   
+        document.addEventListener("deviceready", onDeviceReady, true); 
+        function onDeviceReady() {
+          /*   alert ('width='+screen.width);
+            alert ('height='+screen.height); */
+           /*  document.getElementById('wrapper').style.width=screen.width-40+"px;";
+            document.getElementById('area').style.height=screen.height-132+"px;";
+            document.getElementById('wrapper').style.width=screen.width-40+"px;";
+            document.getElementById('area').style.height=screen.height-132+"px;";  */
+        } 
+            
+            Book.renderTo("area").then(function(){
+              Book.setStyle("padding", "0 40px");
+              localStorage.setItem("fontsize",1.0);
+              document.getElementById('appname').innerHTML=appname;
+              
+            });
+           
+            function nextPage()
+            {
+            	var a=Book.nextPage();
+            	 console.log("abcccccc--"+JSON.stringify(a));
+            }
+            function prePage()
+            {
+            	var b=Book.prevPage();
+            	 console.log("abcccccc--"+JSON.stringify(b));
+            }
+        /*    var skip = Book.goto("chapter_001.xhtml"); */
+          /* skip.then(function(){
+              console.log("On Chapter 1");
+          }); */
+        /*  Book.getToc().then(function(toc){
+        	    console.log("abcccccc--"+JSON.stringify(toc));
+        	}); */  
+        	
+        	
+        	
+        	//----------------------------Ishan///////////////////////////
+        	function loadApp() {
+
+	var flipbook = $('.flipbook');
+
+ 	// Check if the CSS was already loaded
+	
+	if (flipbook.width()=='100%' || flipbook.height()=='100%') {
+		setTimeout(loadApp, 10);
+		return;
+	}
+
+	//$('.flipbook .double').scissor();
+
+	// Create the flipbook
+
+	$('.flipbook').turn({
+			// Elevation
+width:screen.width,
+			
+			// Height
+
+			height:screen.height-100,
+			
+			elevation: 50,
+			
+			// Enable gradients
+
+			gradients: true,
+			
+			// Auto center this flipbook
+
+			autoCenter: true
+
+	});
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['js/turn.js'],
+	complete: loadApp
+});
+
+///////////////////////////////Ishan/////////////////////////////////////
+
+        </script>
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
+"></script>
+<script type="text/javascript" >
+$(document).ready(function()
+{
+
+/* $(".account").click(function()
+{
+var X=$(this).attr('id');
+if(X==1)
+{
+$(".submenu").hide();
+$(this).attr('id', '0'); 
+}
+else
+{
+$(".submenu").show();
+$(this).attr('id', '1');
+}
+
+}); */
+
+//Mouse click on sub menu
+$(".submenu").mouseup(function()
+{
+return false
+});
+
+//Mouse click on my account link
+$(".account").mouseup(function()
+{
+return false
+});
+
+
+//Document Click
+$(document).mouseup(function()
+{
+$(".submenu").hide();
+$(".account").attr('id', '');
+});
+});
+</script>
+    </body>
+</html>
