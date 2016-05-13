@@ -19,10 +19,10 @@
 		<navigationFont>trebuchetMS</navigationFont>
 		<navigationSize>smallNav</navigationSize>
 		<navBackgroundColor>rgba(0,0,0,0.24)</navBackgroundColor>
-		<navBorderColor>#fff</navBorderColor>
+		<navBorderColor>#ffff</navBorderColor>
 		<navTextColor>#ffffff</navTextColor>
 		<navIconColor>#ffffff</navIconColor>
-		<appPageFont>arial</appPageFont>
+		<appPageFont>Calibri </appPageFont>
 		<appPageHsize>mediumHeading</appPageHsize>
 		<pageIndentation>left</pageIndentation>
 		<indentContent>left</indentContent>
@@ -145,24 +145,6 @@
 		<faceBookAppName> </faceBookAppName>
 		<faceBookAppKey> </faceBookAppKey>
 	</loginSetting>
-	<inp>
-		<paymentMethod />
-		<businessId />
-		<inapMonthlySub />
-		<inapYearlySub />
-		<anppAddProductId />
-		<publicKey />
-		<iphoneMonthSubs />
-		<iphoneYearlySubs />
-		<iphoneEditionProductId />
-		<subsPriceMonthly />
-		<subsCurrencyMonthly />
-		<subsPriceYearly />
-		<subsCurrencyYearly />
-		<editionPrice />
-		<editionCurrency />
-		<loginDescr />
-	</inp>
 	<signin>
 		<signintext>Sign in</signintext>
 		<emailid>Email/Phone</emailid>
